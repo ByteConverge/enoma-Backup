@@ -148,7 +148,7 @@ export default function Homepage(){
             logo
           </figure>
           <p>Our Communities</p>
-          <p>Help</p>
+          <p>Help test</p>
         </div>
        </footer>
 
