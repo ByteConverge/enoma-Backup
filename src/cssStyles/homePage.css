@@ -1,0 +1,236 @@
+/* General styles */
+img {
+  width: 100%;
+  height: 100%;
+}
+
+figure {
+  width: 2rem;
+  height: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.green {
+  color: #37A23A;
+}
+.block {
+  display: block;
+}
+
+/*End of General styles  */
+
+.heroSection {
+  height: 100vh;
+  /* height: 784px; */
+  background-image: url("heroBG.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.navBar figure {
+    transform: translateX(7rem);
+    width: 4rem;
+
+}
+
+.navBar--links {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 5rem;
+  min-height: 2rem;
+}
+
+.HAF--links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.HAF--links a:visited {
+  font-weight: bolder;
+}
+
+.links--login--signup {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.links--login--signup a:nth-child(1),
+.links--login--signup a:nth-child(2) {
+  height: 3rem;
+  width: 7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.links--login--signup a:nth-child(1) {
+  border: 1px solid black;
+}
+
+.links--login--signup a:nth-child(2) {
+  background: #3E803E;
+  color: white;
+}
+
+.heroMain {
+  height: 70%;
+  /* height: 516px; */
+  margin: 0 auto;
+  margin-top: .9rem;
+  width: 83%;
+  color: white;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.9rem;
+}
+
+.heroMain h1 {
+ font-size: 2.2rem;
+}
+
+.heroMain p {
+    font-size: 1.4rem;
+}
+
+.heroMain a {
+    color: white;
+}
+
+.getStarted {
+  background-color: #3E803E;
+  display: flex;
+  width: 13rem;
+  height: 4rem;
+  transform: translateX(1rem);
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  border-radius: .4rem;
+}
+
+.getStarted figure {
+  width: 1rem;
+
+}
+
+/* Cards */
+/* Cards style */
+
+.cards--Section {
+    height: 340px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    transform: translateY(-2.7rem);
+    color: white;
+    
+}
+
+.agric--Equip {
+    background-color: #3E803E;
+    width: 30%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.agric--Equip  figure {
+     height: 8rem;
+     width: 15rem;
+}
+.agric--Equip  figure img{
+     height: 100%;
+     width: 100%;
+}
+
+/* Data ICONS */
+
+.data--icons {
+    height: 150px;
+    width: 95%;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.data--icon {
+    width: 21%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+.Icon--number {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.Icon--number figure{
+    height: 70%;
+    width: 30%;
+}
+
+.Icon--number h2 {
+    height: 100%;
+    width: 60%;
+    font-size: 3.6rem;
+    display: grid;
+    align-content: end;
+
+}
+
+/* our mission section */
+
+.OurMissionSection {
+    height: 100vh;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+
+
+
+
+
+

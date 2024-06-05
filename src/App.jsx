@@ -1,14 +1,19 @@
-
+import Homepage from './Pages/Homepage'
+import {BrowserRouter , Routes , Route} from "react-router-dom"
 import './App.css'
+
+
 
 function App() {
  
 
   return (
-    <div>
-     <h1>hi</h1>
-     {/* create the Home page component */}
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Homepage />}/>
+    </Routes>
+    </BrowserRouter>
+    
   )
 }
 
