@@ -313,6 +313,7 @@ text-align: center;
   padding: 10px;
   background: white;
   border-radius: 10px;
+  
 }
 
 .happyCard--img {
@@ -335,11 +336,15 @@ text-align: center;
   text-align: center;
   color: rgb(31, 43, 31);
 }
+.happyCard--text p{
+  font-size: 20px;
+}
 
 .Rate--num {
   display: flex;
   gap: 10px;
   align-items: center;
+
   
 }
 .Rate--num figure{
@@ -389,8 +394,99 @@ text-align: center;
 
  /* Footer section */
 
- .footerSection {
+ .footer {
   height: 45vh;
-  background-color: black;
-  color: white;
+  background-color: #000;
+  padding: 1rem 3rem ;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid #333;
  }
+
+ 
+
+.top-section {
+  display: flex;
+  width: 100%;
+  padding-left: 4rem;
+  height: 40%;
+  align-items: center;
+  gap: .4rem;
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+  background-color: #ccc;
+  display: grid;
+  place-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 70%;
+ 
+}
+
+.links--date{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  /* background: greenyellow; */
+  margin-left: 10rem;
+  height: 100%;
+  padding-top: 1.5rem;
+  gap: 1rem;
+}
+
+.legal-links {
+  display: grid;
+   font-size:1.1rem;
+  grid-template-columns: 32% 32% 32%;
+  width: 100%;
+  row-gap: 1rem;
+}
+.legal-links a:nth-child(5){
+  padding-left: 1rem;
+}
+
+.date {
+  color: white;
+}
+
+.social-icons--Contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 10rem;
+
+}
+.social-icons--Contact h3{
+  color: white;
+  font-size: 1.3rem;
+}
+
+.icons{
+  display: flex;
+  gap: .7rem;
+}
+.social-icons--Contact a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.links a, .legal-links a {
+  color: #fff;
+  text-decoration: none;
+}
+

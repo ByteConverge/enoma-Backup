@@ -1,6 +1,10 @@
 import Homepage from './Pages/Homepage'
-import {BrowserRouter , Routes , Route} from "react-router-dom"
-import './App.css'
+import AboutPage from './Pages/AboutPage'
+import Faq from './Pages/Faq'
+import {BrowserRouter as Router, Routes , Route} from "react-router-dom"
+import './cssStyles/App.css'
+
+
 
 
 
@@ -8,12 +12,13 @@ function App() {
  
 
   return (
-    <BrowserRouter>
+    <Router>
     <Routes>
       <Route path="/" element={<Homepage />}/>
-      
+      <Route path='/about' element={<AboutPage />}/>
+      <Route path='/faq' element={<Faq/>} />
     </Routes>
-    </BrowserRouter>
+    </Router>
     
   )
 }

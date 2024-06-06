@@ -3,59 +3,13 @@ import { Link } from "react-router-dom"
 import Cards from "../components/Cards"
 import DataIcon from "../components/DataIcon"
 import HappyCard from "../components/HappyCard"
+import Footer from "../components/Footer"
+import Hero from "../components/Hero"
+
 export default function Homepage(){
     return (
       <>
-     {/* Hero---Section */}
-      <div className="heroSection">
-        {/* nav---Bar */}
-        <nav className="navBar">
-            <figure>
-           {/* <img src="" alt="" width="40px"/> */}
-           LOGO
-            </figure>
-            {/*  */}
-            <div className="navBar--links">
-                <div className="HAF--links">
-                  <Link>Home</Link>
-                  <Link>About us</Link>
-                  <Link>FAQ</Link>
-                </div>
-                {/*  */}
-                <div className="links--login--signup">
-                    <Link>Sign in</Link>
-                    <Link>Sign up</Link>
-                </div>
-            </div>
-        </nav>
-        {/* Hero---Main */}
-        <div className="heroMain">
-         <h1>
-          <span className="block">
-          <span className="green">E</span>-Noma <span className="green">Elevate Your, Yield</span>
-          </span>
-          With Innovative Agricultural Structure
-          </h1>
-          {/*  */}
-          <p><span className="block" >We offer a comprehensive suite of tools and technologies designed</span>
-          <span className="block">to streamlineyour farming operations.Whether you are a seasoned</span>
-          <span className="block">farmer or just starting , ensuring that every crop thrives</span>
-          </p>
-          {/*  */}
-          <Link>
-          <div className="getStarted">
-            <h3 >Get Started Now</h3>
-            <figure>
-              <img src="GetStartedArrow.svg" alt="" />
-            </figure>
-          </div>
-          </Link>
-       
-        </div>
-      </div>
-      {/* Hero section ends here */}
-
-      {/* Cards section */}
+     <Hero />
       <div className="cards--Section">
       <Cards 
       img="tractorIcon.svg" 
@@ -142,16 +96,7 @@ export default function Homepage(){
          </div>
       </div>
       {/* Footer section */}
-       <footer className="footerSection">
-        <div>
-          <figure>
-            logo
-          </figure>
-          <p>Our Communities</p>
-          <p>Help test</p>
-        </div>
-       </footer>
-
+      <Footer />
       </>
             
     )
