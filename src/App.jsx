@@ -5,7 +5,8 @@ import AboutPage from './Pages/AboutPage'
 import Faq from './Pages/Faq'
 import WelcomePage from "./Pages/WelcomePage"
 import SignIn from './Pages/SignIn'
-
+import SignUpLender from "./Pages/SignUpLender"
+import SignUpClient from "./Pages/SignUpClient"
 
 
 
@@ -22,6 +23,8 @@ function App() {
       <Route path='/faq' element={<Faq/>} />
       <Route path='/signIn' element={<SignIn />}/>
       <Route path="/welcomePage" element={<WelcomePage />} />
+      <Route path="/signUpLender" element={<SignUpLender />}/>
+      <Route path="signUpClient" element={<SignUpClient />}/>
     </Routes>
     </BrowserRouter>
     

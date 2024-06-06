@@ -15,8 +15,8 @@
             </div>
 
             <div>
-              <Link>Sign up as Farmer</Link>
-              <Link>Sign up as Lender</Link>
+              <Link to="/signUpClient">Sign up as Farmer</Link>
+              <Link to="/signUpLender">Sign up as Lender</Link>
             </div>
            
           </div>
