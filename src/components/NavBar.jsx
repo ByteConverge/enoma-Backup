@@ -22,8 +22,8 @@ export default function NavBar(){
             </div>
             {/*  */}
             <div className="links--login--signup">
-                <Link>Sign in</Link>
-                <Link to="">Sign up</Link>
+                <Link to="/signIn">Sign in</Link>
+                <Link to="/WelcomePage">Sign up</Link>
             </div>
         </div>
     </nav> 

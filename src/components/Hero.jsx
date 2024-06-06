@@ -19,7 +19,7 @@ export default function Hero(){
           <span className="block">farmer or just starting , ensuring that every crop thrives</span>
           </p>
           {/*  */}
-          <Link>
+          <Link to="/welcomePage">
           <div className="getStarted">
             <h3 >Get Started Now</h3>
             <figure>
