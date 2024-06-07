@@ -7,7 +7,7 @@ export default function Footer(){
         <footer className="footer">
         <div className="top-section">
             <figure className="logo">
-                LOGO
+                <img src="enomalogo2.PNG" alt="" width="40px" />
             </figure>
             <div className="links">
                 <Link >Our Communities</Link>

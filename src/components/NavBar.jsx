@@ -10,8 +10,8 @@ export default function NavBar(){
     return(
         <nav className="navBar">
         <figure>
-       {/* <img src="" alt="" width="40px"/> */}
-       LOGO
+       <img src="enomalogo2.PNG" alt="" width="40px"/>
+
         </figure>
         {/*  */}
         <div className="navBar--links">
