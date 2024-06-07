@@ -27,9 +27,10 @@ export default function SignUpLender(){
         <input type="text" placeholder=""/>
       
         <select className="selectOption" name="" id="">
-            <option value="">Farmer/Lender?</option>
-            <option value="">Farmer</option>
-            <option value="">Lender</option>
+            <option value="">Select Lease Property</option>
+            <option value="">Land</option>
+            <option value="">Farm Euipments</option>
+            <option value="">Both</option>
         </select>
 
       
