@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
 import NavBar from "./NavBar"
+// import bgHero from "../assets/heroBG.jpg"
 
 export default function Hero(){
     return(
-        <div className="heroSection">
+        <div className="heroSection" style={{background: `url("./heroBG.jpg")`}}>
         <NavBar />
         {/* Hero---Main */}
-        <div className="heroMain">
+        <div className="heroMain" >
          <h1>
           <span className="block">
           <span className="green">E</span>-Noma <span className="green">Elevate Your, Yield</span>

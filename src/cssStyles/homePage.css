@@ -26,7 +26,7 @@ a {
 .heroSection {
   height: 100vh;
   /* height: 784px; */
-  background: url("./heroBG.jpg");
+  /* background: url("./heroBG.jpg"); */
   background-size: cover;
   background-position: center;
   display: flex;
