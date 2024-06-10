@@ -97,6 +97,7 @@ export default function Homepage(){
       </div>
       {/* Footer section */}
       <Footer />
+  
       </>
             
     )

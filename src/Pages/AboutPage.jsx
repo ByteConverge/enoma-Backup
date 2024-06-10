@@ -8,7 +8,7 @@ export default function AboutPage(){
         <>
           <div className="AboutHero">
           <NavBar />
-          {/*About passages  */}
+          {/*  About passages  */}
         <div className="About--container">
         <div className="aboutUs--wrap space">    
         <h2 className="aboutUs--header ">About Us</h2>
