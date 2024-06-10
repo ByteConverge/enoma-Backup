@@ -3,8 +3,17 @@ import NavBar from "./NavBar"
 // import bgHero from "../assets/heroBG.jpg"
 
 export default function Hero(){
+
+     let heroSectionStyles ={
+      background: `url("./heroBG.jpg")`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      flexdirection: "column"
+     }    
+
     return(
-        <div className="heroSection" style={{background: `url("./heroBG.jpg")`}}>
+        <div className="heroSection" style={heroSectionStyles}>
         <NavBar />
         {/* Hero---Main */}
         <div className="heroMain" >
