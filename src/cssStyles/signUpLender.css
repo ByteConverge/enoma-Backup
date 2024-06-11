@@ -8,16 +8,6 @@
     grid-template-rows: 100%;
 }
 
-.signUpBg{
- background-image:linear-gradient(rgba(245, 245, 245, 0),rgba(0, 0, 0, 0.486)), url("signinBg.jpg"); 
-
- /* background-color: rgb(110, 184, 209); */
-
- background-size: 100% 100%; 
- background-repeat: no-repeat;
- background-attachment: fixed;
- position: relative;
-}
 
 
 

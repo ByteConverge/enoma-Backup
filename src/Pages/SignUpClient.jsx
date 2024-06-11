@@ -3,10 +3,19 @@ import {Link} from "react-router-dom"
 
 
 export default function SignUpClient(){
-    return(
-        <div className="signUp--container">
+     const signUpBgstyle ={
+      background:`linear-gradient(rgba(245, 245, 245, 0),rgba(0, 0, 0, 0.486)), url("signinBg.jpg")`,
+      backgroundSize: `100% 100%`,
+      backgroundRepeat: `no-repeat`,
+      backgroundAttachment: `fixed`,
+      position: `relative`
+     }
 
-       <div className="signUpBg">
+
+    return(
+        <div className="signUp--container"  >
+
+       <div style={signUpBgstyle}>
          <h1 className="enoma--header">E-Noma</h1>
        </div>
        {/* ...... */}

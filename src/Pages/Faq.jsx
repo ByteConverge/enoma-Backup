@@ -4,9 +4,16 @@ import "../cssStyles/faq.css"
 
 
 export default function Faq(){
+    const faqHero={
+        backgroundImage: `linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url("enomAbFaqBG.jpg")`
+    }
     return(
        <>
-          <div className="faqHero">
+          <div className="faqHero" style={faqHero} >
           <NavBar />
           <div className="faqContainer">
           <h1 className="help-header-text">How Can We Help You?</h1>

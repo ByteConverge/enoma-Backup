@@ -7,6 +7,10 @@ import Footer from "../components/Footer"
 import Hero from "../components/Hero"
 
 export default function Homepage(){
+     const getInTouchBg ={
+      background: `url("getInTouchBg.jpg")`
+     }
+
     return (
       <>
      <Hero />
@@ -84,7 +88,7 @@ export default function Homepage(){
       </div>
       </div>
       {/* Get in touch section*/}
-      <div className="get--in--touch">
+      <div className="get--in--touch" style={getInTouchBg}>
         <div className="text-wraps">
         <h1><span className="block">Get In Touch With Us -</span>
          <span className="block">Your Agricultural</span>
