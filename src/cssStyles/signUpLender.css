@@ -159,3 +159,9 @@ justify-content: center;
     text-decoration: underline;
 }
 
+.toggle {
+    transform: translate(90%, -2.7rem);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
