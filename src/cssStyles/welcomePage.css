@@ -140,7 +140,9 @@
     
     .welcome--text--div div:nth-child(1) p {
         font-size: 1rem;
-        color: #ec0c0c;   text-align: center;
+        color: #ffffff;  
+         text-align: center;
+         margin-top: 2rem;
         text-shadow: 0 0  10px black;
     }
     
