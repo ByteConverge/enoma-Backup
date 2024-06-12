@@ -69,55 +69,61 @@ function SignInForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData)
-      });
+      })
         
 
       if (response.ok) {
-        setErrors((prevErrors) => ({
-          ...prevErrors,
-          form: '',
-        }));
-        setSuccess("..logging in..")
-        console.log("success")
-        console.log(formData)
         console.log(response)
-
-        setTimeout(() => {
-          
-          navigate('/');
-        }, 3000);
-
           
       }else{
-        console.log("conflict")
-        setSuccess("")
+         setSuccess("")
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'wrong Email or password',
-        }));
+          form: 'Invalid Credentials',
+        }))
       }
 
       const data = await response.json();
+       console.log(data);
 
-      if (data.token) {
+      if (data.Token) {
+
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'logging in',
-        }));
-        console.log("conflict")
-      
+          form: '',
+        }))
+
+        setSuccess(data.message)
+
         // Storing JWT in local storage
 
-        localStorage.setItem('jwt', data.token);
-        console.log(data.token)
-        // Redirect to the dashboard
-        // navigate('/');
+        localStorage.setItem('jwt', data.Token);
+
+        console.log(data.Token)
+
+        setTimeout(() => {
+          if(data.User.role === "client"){
+            navigate("/clientLogged" , {
+              replace:true
+            })
+          }else if(data.User.role === "lender"){
+           
+            navigate("/lenderLoggedIn" , {
+              replace: true
+            })
+          }
+        
+              // navigate('/');
+            }, 3000);
+    
+      
       } else {
        
-        console.log("conflict")
+        // console.log("conflict")
       
       }
     } catch (error) {
+      setSuccess("")
       setErrors((prevErrors) => ({
         ...prevErrors,
         form: 'Failed to login:Check Data Connection',
@@ -127,15 +133,13 @@ function SignInForm() {
   }
 // toggle States
   const [toggle1, setToggle1] = useState(false)
-  const [toggle2, setToggle2] = useState(false)
+  
 
   function passwordToggle1(){
     setToggle1(preVState=>!preVState)
     
   }
-  function passwordToggle2(){
-    setToggle2(preVState=>!preVState)
-  }
+
    
 
     // JSX RETURN
@@ -144,7 +148,7 @@ function SignInForm() {
     <form onSubmit={handleSubmit} className="loginForm">
 
       {errors.form && <p style={{ color: 'red' ,fontSize: "1rem" }}>{errors.form}</p>}
-      {success && <p style={{ color: 'green' ,fontSize: "1.5rem", textAlign:"center" }}>{success}</p>}
+      {success && <p style={{ color: 'green' ,fontSize: "1rem", textAlign:"center" }}>{success}</p>}
       {/* hidden input role */}
       <input 
       type="hidden"

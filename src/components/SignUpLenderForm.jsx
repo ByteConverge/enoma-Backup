@@ -110,7 +110,7 @@ function SignUpClientForm() {
         setSuccess("")
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'User Already Exist',
+          form: 'User with email Already Exist',
         }));
       }
 
