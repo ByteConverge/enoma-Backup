@@ -13,6 +13,7 @@ function SignUpClientForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -84,39 +85,61 @@ function SignUpClientForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
-        mode: "cors"
+        body: JSON.stringify(formData)
       });
-
-      if (!response.ok) {
-        // throw new Error('Network response was not ok')
-        console.log("error")
-        console.log(formData)
-        console.log(response)
         
 
-          
-      }
-
-      const data = await response.json();
-
-      if (data.token) {
-        // Storing JWT in local storage
-        localStorage.setItem('jwt', data.token);
-        // Redirect to the dashboard
-        navigate('/');
-      } else {
+      if (response.ok) {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'Signup failed',
+          form: '',
+        }));
+        setSuccess("..logging in..")
+        console.log("success")
+        console.log(formData)
+        console.log(response)
+
+        setTimeout(() => {
+          
+          navigate('/signIn');
+        }, 3000);
+
+          
+      }else{
+        console.log("conflict")
+        setSuccess("")
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          form: 'User Already Exist',
         }));
       }
+
+      // const data = await response.json();
+
+      // if (data.token) {
+      //   setErrors((prevErrors) => ({
+      //     ...prevErrors,
+      //     form: 'logging in',
+      //   }));
+      //   console.log("conflict")
+      
+      //   // Storing JWT in local storage
+
+      //   localStorage.setItem('jwt', data.token);
+      //   console.log(data.token)
+      //   // Redirect to the dashboard
+      //   // navigate('/');
+      // } else {
+       
+      //   console.log("conflict")
+      
+      // }
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         form: 'Failed to sign up',
       }));
-      console.error('There was an error!', error)
+      
     }
   }
 // toggle States
@@ -136,7 +159,9 @@ function SignUpClientForm() {
 
   return (
     <form onSubmit={handleSubmit} className="signUpForm">
+
       {errors.form && <p style={{ color: 'red' ,fontSize: "1rem" }}>{errors.form}</p>}
+      {success && <p style={{ color: 'green' ,fontSize: "1.5rem", textAlign:"center" }}>{success}</p>}
       {/* hidden input role */}
       <input 
       type="hidden"

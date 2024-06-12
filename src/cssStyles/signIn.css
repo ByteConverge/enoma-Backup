@@ -9,11 +9,7 @@
 }
 
 .signInBg{
- background-image:linear-gradient(rgba(245, 245, 245, 0),rgba(0, 0, 0, 0.486)), url("signinBg.jpg"); 
 
- background-size: cover; 
- background-position: center;
- position: relative;
 }
 
 .enoma--header {

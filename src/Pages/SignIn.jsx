@@ -4,10 +4,18 @@ import {Link} from "react-router-dom"
 
 
 export default function SignIn(){
+    const signInBg = {
+        background: `linear-gradient(rgba(245, 245, 245, 0),rgba(0, 0, 0, 0.486)), url("signinBg.jpg")`,
+        backgroundSize: `cover`, 
+        backgroundPosition: `center`,
+        position: `relative`,
+
+    }
+
     return(
         <div className="signIn--container">
 
-       <div className="signInBg">
+       <div className="signInBg"  style={signInBg}>
          <h1 className="enoma--header">E-Noma</h1>
        </div>
 
