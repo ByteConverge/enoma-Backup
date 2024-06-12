@@ -93,8 +93,8 @@
     }
     
     .welcome--image--wrap {
-     width: 90%;
-     height: 90vh;
+     width: 100%;
+     height: 100dvh;
      display: grid;
      grid-template-rows: 100%;
      grid-template-columns: 100%;  
