@@ -15,8 +15,23 @@ body {
   width: 100%;
   min-height: 100dvh;
   background-color: #bac3c6;
+  display: flex;
+  flex-direction: column;
+  /* gap: 5rem; */
 }
 
 input[type="number"]::-webkit-inner-spin-button{
   display: none;
+}
+
+@media all and (max-width:768px){
+  #root {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: #bac3c6;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
 }

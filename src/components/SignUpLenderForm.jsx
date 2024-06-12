@@ -226,7 +226,7 @@ function SignUpClientForm() {
       <span className='toggle' style={{display: "block"}} onClick={passwordToggle2}>&#x1f441;</span>
       {errors.confirmPassword && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.confirmPassword}</p>}
 
-      <button className="sign-in-button" type="submit">Sign Up</button>
+      <button className="sign-up-button" type="submit">Sign Up</button>
     </form>
   );
 }

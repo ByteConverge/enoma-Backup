@@ -136,6 +136,11 @@ justify-content: center;
     width: 50%;
 }
 
+.sign-in-button:active{
+    background-color: #7f9b86;
+}
+
+
 .sign-up {
     margin-top: 20px;
     font-size: 14px;
