@@ -120,7 +120,7 @@ function SignInForm() {
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        form: 'Failed to sign up',
+        form: 'Failed to login:Check Data Connection',
       }));
       
     }
