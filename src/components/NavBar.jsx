@@ -1,23 +1,40 @@
 import {Link ,NavLink} from "react-router-dom"
+import { useState } from "react"
 
 export default function NavBar(){
+ const [hambugMenu , setHambugMenu] = useState(false)
+
+  function handleClick(){
+    setHambugMenu(prevState=> !prevState)
+  }
+
+  function removeHandle(){
+    setHambugMenu(false)
+  }
+
+
 
      const activeStyles ={
         fontWeight: "bold",
         TextDecoration: "underline"
      }
 
+   
+    //  const dropDown = {
+    //     display: hambugMenu? "flex" : "none"
+    //  }
+
     return(
-        <nav className="navBar">
+        <nav className="navBar" >
         <figure>
        <img src="enomalogo2.PNG" alt="" width="40px"/>
 
         </figure>
-        {/*  */}
-        <div className="navBar--links">
+        {/*  .navBar--links // navBar--links-display--none  */}
+        <div className={`navBar--links ${!hambugMenu && "navBar--links-display--none"}`} >
             <div className="HAF--links">
-              <NavLink to="/" Style={({isActive})=> isActive? activeStyles : null}>Home</NavLink>
-              <NavLink to="/about" Style={({isActive})=> isActive? activeStyles : null}>About us</NavLink>
+              <NavLink to="/" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>Home</NavLink>
+              <NavLink to="/about" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>About us</NavLink>
               <NavLink to="/faq" >FAQ</NavLink>
             </div>
             {/*  */}
@@ -26,6 +43,7 @@ export default function NavBar(){
                 <Link to="/WelcomePage">Sign up</Link>
             </div>
         </div>
+        <span className="hamburger" onClick={handleClick}>&#9776;</span>
     </nav> 
     )
 }
