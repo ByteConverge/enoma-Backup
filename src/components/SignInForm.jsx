@@ -4,12 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 function SignInForm() {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    contactNumber: '',
-    role: "client"
   });
 
   const [errors, setErrors] = useState({});
@@ -46,10 +42,10 @@ function SignInForm() {
 
   async function handleSubmit(e){
     e.preventDefault();
-    const { name,  contactNumber, email, password, confirmPassword } = formData;
+    const { email, password} = formData;
 
     // Basic validation
-    if (!name || ! contactNumber || !email || !password || !confirmPassword) {
+    if ( !email || !password) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         form: 'All fields are required',
@@ -63,24 +59,11 @@ function SignInForm() {
       }));
       return;
     }
-    if (password !== confirmPassword) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        confirmPassword: 'Passwords do not match',
-      }
-    ));
-      return;
-    }else{
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            confirmPassword: '',
-          }
-        ));
-    }
+  
 
     // Sending POST request to the server
     try {
-      const response = await fetch('https://enoma-backend-v1.onrender.com/api/auth/signup', {
+      const response = await fetch('https://enoma-backend-v1.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +84,7 @@ function SignInForm() {
 
         setTimeout(() => {
           
-          navigate('/signIn');
+          navigate('/');
         }, 3000);
 
           
@@ -110,30 +93,30 @@ function SignInForm() {
         setSuccess("")
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'User Already Exist',
+          form: 'wrong Email or password',
         }));
       }
 
-      // const data = await response.json();
+      const data = await response.json();
 
-      // if (data.token) {
-      //   setErrors((prevErrors) => ({
-      //     ...prevErrors,
-      //     form: 'logging in',
-      //   }));
-      //   console.log("conflict")
+      if (data.token) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          form: 'logging in',
+        }));
+        console.log("conflict")
       
-      //   // Storing JWT in local storage
+        // Storing JWT in local storage
 
-      //   localStorage.setItem('jwt', data.token);
-      //   console.log(data.token)
-      //   // Redirect to the dashboard
-      //   // navigate('/');
-      // } else {
+        localStorage.setItem('jwt', data.token);
+        console.log(data.token)
+        // Redirect to the dashboard
+        // navigate('/');
+      } else {
        
-      //   console.log("conflict")
+        console.log("conflict")
       
-      // }
+      }
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -158,7 +141,7 @@ function SignInForm() {
     // JSX RETURN
 
   return (
-    <form onSubmit={handleSubmit} className="signUpForm">
+    <form onSubmit={handleSubmit} className="loginForm">
 
       {errors.form && <p style={{ color: 'red' ,fontSize: "1rem" }}>{errors.form}</p>}
       {success && <p style={{ color: 'green' ,fontSize: "1.5rem", textAlign:"center" }}>{success}</p>}
@@ -170,25 +153,6 @@ function SignInForm() {
       
        />
       {/* hidden input role */}
-      <label>Name</label>
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        
-      />
-      {errors.name && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.name}</p>}
-
-      <label>Phone number</label>
-      <input
-        type="number"
-        name="contactNumber"
-        value={formData.contactNumber}
-        onChange={handleChange}
-    
-      />
-      {errors.phoneNumber && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.phoneNumber}</p>}
 
       <label>Email</label>
       <input
@@ -210,25 +174,12 @@ function SignInForm() {
         
       />
       {/* Toogle 1 */}
-       <span className="toggle" style={{display: "block"} } onClick={passwordToggle1}>&#x1f441;</span>
+       <span className="toggleSignIn" style={{display: "block"} } onClick={passwordToggle1}>&#x1f441;</span>
 
-      {errors.password && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.password}</p>}
 
-      <label>Confirm Password</label>
-      <input
-        type={toggle2? "text" : "password"}
-        name="confirmPassword"
-        value={formData.confirmPassword}
-        onChange={handleChange}
-        
-      />
-      {/* Toggle 2 */}
-      <span className='toggle' style={{display: "block"}} onClick={passwordToggle2}>&#x1f441;</span>
-      {errors.confirmPassword && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.confirmPassword}</p>}
-
-      <button className="sign-in-button" type="submit">Sign Up</button>
+      <button className="sign-in-button" type="submit">Sign in</button>
     </form>
-  );
+  )
 }
 
 export default SignInForm;
