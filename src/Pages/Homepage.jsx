@@ -73,7 +73,7 @@ export default function Homepage(){
       </div>
       {/* Happy Customers */}
       <div className="happyCustomers">
-      <h1>Happy <span>Costumers</span></h1>
+      <h1>Happy <span>Customers</span></h1>
       <div className="happy--cards--wrap">
       <HappyCard 
       img="happyCustomers-1.jpg"
