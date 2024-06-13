@@ -38,7 +38,7 @@ export default function LoggedInNavBarLender(){
               <NavLink to="/lenderLoggedInFaq" >FAQ</NavLink>
             </div>
 
-             <Link to="/dashboard">
+             <Link to="/dashboard" style={{background:"black",color:"white",height:"2rem", width:"7rem", display:"grid",placeItems:"center",borderRadius:"10px"}}>
              DashBoard
              </Link>
                 
