@@ -35,9 +35,9 @@ function App() {
       <Route path="clientLoggedInHome" element={<ClientLoggedInHome />}/>
       <Route path="clientLoggedInAbout" element={<ClientLoggedInAbout/>}/>
       <Route path="clientLoggedInFaq" element={<ClientLoggedInFaq />} />
-      <Route  path="vendorLoggedInHome" element={<VendorLoggedHome />}  />
-      <Route   path="vendorLoggedInAbout" element={<VendorLoggedInAbout />}/>
-      <Route   path="vendorLoggedInFaq" element={<VendorLoggedInFaq />}/>
+      <Route  path="lenderLoggedInHome" element={<VendorLoggedHome />}  />
+      <Route   path="lenderLoggedInAbout" element={<VendorLoggedInAbout />}/>
+      <Route   path="lenderLoggedInFaq" element={<VendorLoggedInFaq />}/>
     </Routes>
     </BrowserRouter>
     
