@@ -178,7 +178,9 @@ function SignInForm() {
         
       />
       {/* Toogle 1 */}
-       <span className="toggleSignIn" style={{display: "block"} } onClick={passwordToggle1}>&#x1f441;</span>
+       <span className="toggleSignIn" style={{display: "block"} } onClick={passwordToggle1}>
+        <img src="../../public/eye-slash.svg" width="5px"/> 
+        </span>
 
       </div>
 

@@ -148,15 +148,15 @@ justify-content: center;
     text-decoration: underline;
 }
 
-.toggleSignIn {
-    font-size: 2rem;
+.toggleSignIn img{
+    font-size: 1.5rem;
     cursor: pointer;
     width: 2rem;
     text-shadow: none;
     color: black;
     position: absolute;
     right: 5%;
-    top: 35%;
+    top: 20%;
 }
 
 .passwordOne{
@@ -269,15 +269,15 @@ justify-content: center;
     text-decoration: underline;
 }
 
-.toggleSignIn {
-    font-size: 2rem;
+.toggleSignIn img{
+    font-size: 1.5rem;
     cursor: pointer;
     width: 2rem;
     text-shadow: none;
     color: black;
     position: absolute;
     right: 5%;
-    top: 35%;
+    top: 9%;
 }
 
 .passwordOne{
