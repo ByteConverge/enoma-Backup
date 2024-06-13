@@ -33,13 +33,23 @@ gap: 1rem;
 }
 
 
-.layout figure img{
+.layOut figure img{
  height: 100%;
  width: 100%;
 }
 
 .layOut h3{
 font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .layOut h3{
+        display: none;
+        background-color: green;
+    }
+    .layOut figure{
+        width: 100%;
+    }
 }
 
 
