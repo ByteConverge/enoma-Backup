@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import eyeToggle from "../assets/eye-slash.png"
 
 function SignInForm() {
   const [formData, setFormData] = useState({
@@ -179,7 +180,7 @@ function SignInForm() {
       />
       {/* Toogle 1 */}
        <span className="toggleSignIn" style={{display: "block"} } onClick={passwordToggle1}>
-        <img src="../../public/eye-slash.png" width="5px"/> 
+        <img src={eyeToggle} width="5px"/> 
         </span>
 
       </div>
