@@ -7,6 +7,12 @@ import WelcomePage from "./Pages/WelcomePage"
 import SignIn from './Pages/SignIn'
 import SignUpLender from "./Pages/SignUpLender"
 import SignUpClient from "./Pages/SignUpClient"
+import ClientLoggedInHome from "./loggedInPages/ClientLoggedInHome"
+import ClientLoggedInAbout from "./loggedInPages/ClientLoggedInAbout"
+import ClientLoggedInFaq from "./loggedInPages/ClientLoggedInFaq"
+import VendorLoggedHome from "./loggedInPages/VendorLoggedHome"
+import VendorLoggedInAbout from "./loggedInPages/vendorLoggedAbout"
+import VendorLoggedInFaq from "./loggedInPages/VendorLoggedFaq"
 
 
 
@@ -26,6 +32,12 @@ function App() {
       <Route path="/welcomePage" element={<WelcomePage />} />
       <Route path="/signUpLender" element={<SignUpLender />}/>
       <Route path="signUpClient" element={<SignUpClient />}/>
+      <Route path="clientLoggedInHome" element={<ClientLoggedInHome />}/>
+      <Route path="clientLoggedInAbout" element={<ClientLoggedInAbout/>}/>
+      <Route path="clientLoggedInFaq" element={<ClientLoggedInFaq />} />
+      <Route  path="vendorLoggedInHome" element={<VendorLoggedHome />}  />
+      <Route   path="vendorLoggedInAbout" element={<VendorLoggedInAbout />}/>
+      <Route   path="vendorLoggedInFaq" element={<VendorLoggedInFaq />}/>
     </Routes>
     </BrowserRouter>
     

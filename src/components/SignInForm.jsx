@@ -103,12 +103,12 @@ function SignInForm() {
 
         setTimeout(() => {
           if(data.User.role === "client"){
-            navigate("/clientLogged" , {
+            navigate("/clientLoggedInHome" , {
               replace:true
             })
           }else if(data.User.role === "lender"){
            
-            navigate("/lenderLoggedIn" , {
+            navigate("/lenderLoggedInHome" , {
               replace: true
             })
           }

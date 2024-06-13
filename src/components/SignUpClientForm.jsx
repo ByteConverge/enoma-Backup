@@ -94,7 +94,7 @@ function SignUpClientForm() {
           ...prevErrors,
           form: '',
         }));
-        setSuccess("..logging in..")
+        setSuccess("Sign Up Successfully")
         console.log("success")
         console.log(formData)
         console.log(response)
