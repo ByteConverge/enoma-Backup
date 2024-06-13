@@ -169,4 +169,130 @@ justify-content: center;
     cursor: pointer;
     width: 2rem;
 }
+.toggle {
+    transform: translate(0, -2.5rem);
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: 2rem;
+    text-shadow: none;
+    color: black;
+    position: absolute;
+    right: 5%;
+}
+.passwordOne{
+    /* background-color: goldenrod; */
+    height: 4.5rem;
+    position: relative;
+}
 
+@media screen and (max-width:768px) {
+     
+ .signUp--container {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+   
+
+}
+
+.signUp--container div:nth-child(1){
+    display: none;
+}
+
+.signUp---fields{
+   background-image: url("../assets//signUp1.jpg"); 
+   background-position: center;
+   background-attachment: fixed;
+   width: 100%;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   color: rgb(255, 255, 255);
+   text-shadow: 0 0 2px black;
+   text-align: center;  
+}
+
+
+
+.signUp--header{
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+
+/*  */
+.signUpForm label{
+  text-align: left;
+}
+.signUpForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 3rem;
+}
+
+
+
+
+
+.forgot-password {
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.sign-up-button {
+    background-color: #1c582b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+    margin-top: 2rem;
+}
+
+.sign-up-button:active {
+    background-color: #7f9b86;
+}
+
+.sign-up {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.sign-up a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.toggle {
+    transform: translate(0, 0);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 2rem;
+    text-shadow: none;
+    color: black;
+    position: absolute;
+    right: 5%;
+    top: 40%;
+}
+.passwordOne{
+
+    height: 5rem;
+    position: relative;
+}
+
+.sideImg{
+    display: none;
+}
+}

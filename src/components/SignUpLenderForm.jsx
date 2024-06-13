@@ -200,7 +200,8 @@ function SignUpClientForm() {
         
       />
       {errors.email && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.email}</p>}
-
+      {/* passwords */}
+    <div className='passwordOne'>
       <label>Password</label>
       <input
         type={toggle1? "text" : "password"}
@@ -211,9 +212,10 @@ function SignUpClientForm() {
       />
       {/* Toogle 1 */}
        <span className="toggle" style={{display: "block"} } onClick={passwordToggle1}>&#x1f441;</span>
+     </div>
 
       {errors.password && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.password}</p>}
-
+   <div  className='passwordOne' >
       <label>Confirm Password</label>
       <input
         type={toggle2? "text" : "password"}
@@ -224,6 +226,7 @@ function SignUpClientForm() {
       />
       {/* Toggle 2 */}
       <span className='toggle' style={{display: "block"}} onClick={passwordToggle2}>&#x1f441;</span>
+   </div>
       {errors.confirmPassword && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.confirmPassword}</p>}
 
       <button className="sign-up-button" type="submit">Sign Up</button>

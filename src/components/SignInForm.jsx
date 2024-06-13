@@ -168,7 +168,7 @@ function SignInForm() {
         
       />
       {errors.email && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.email}</p>}
-
+   <div className='passwordOne'>
       <label>Password</label>
       <input
         type={toggle1? "text" : "password"}
@@ -180,6 +180,7 @@ function SignInForm() {
       {/* Toogle 1 */}
        <span className="toggleSignIn" style={{display: "block"} } onClick={passwordToggle1}>&#x1f441;</span>
 
+      </div>
 
       <button className="sign-in-button" type="submit">Sign in</button>
     </form>

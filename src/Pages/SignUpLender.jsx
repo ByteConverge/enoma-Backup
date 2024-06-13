@@ -16,7 +16,7 @@ export default function SignUpLender(){
     return(
         <div className="signUp--container">
 
-       <div style={signUpBgstyle}>
+       <div  style={signUpBgstyle}>
          <h1 className="enoma--header">E-Noma</h1>
        </div>
        {/* ...... */}

@@ -8,9 +8,6 @@
     grid-template-rows: 100%;
 }
 
-.signInBg{
-
-}
 
 .enoma--header {
     font-size: 2.4rem;
@@ -152,9 +149,140 @@ justify-content: center;
 }
 
 .toggleSignIn {
-    transform: translate(1360%, -2.9rem);
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
     width: 2rem;
+    text-shadow: none;
+    color: black;
+    position: absolute;
+    right: 5%;
+    top: 35%;
 }
 
+.passwordOne{
+
+    height: 5rem;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+     
+ .signIn--container {
+    width: 100%;
+    height: 100dvh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+.signIn--container div:nth-child(1){
+    display: none;
+}
+
+.signIn---fields{
+    background-image: url("../assets//signUp1.jpg"); 
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px black;
+    text-align: center;
+    min-height: 100dvh;
+    
+ }
+
+
+
+.signIn--header{
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+
+.or {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2px 0;
+
+}
+
+.or::before, .or::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.or::before {
+    margin-right: 10px;
+}
+
+.or::after {
+    margin-left: 10px;
+}
+
+.loginForm input {
+
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 2rem;
+}
+
+.forgot-password {
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.sign-in-button {
+    background-color: #1c582b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+}
+
+.sign-in-button:active{
+    background-color: #7f9b86;
+}
+
+
+.sign-up {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.sign-up a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.toggleSignIn {
+    font-size: 2rem;
+    cursor: pointer;
+    width: 2rem;
+    text-shadow: none;
+    color: black;
+    position: absolute;
+    right: 5%;
+    top: 35%;
+}
+
+.passwordOne{
+
+    height: 5rem;
+    position: relative;
+}
+}
