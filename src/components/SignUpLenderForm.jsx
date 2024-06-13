@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import eyeToggle from "../assets/eye-slash.svg"
 
-function SignUpClientForm() {
+function SignUpLenderForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
     contactNumber: '',
-    role: "lender"
+    role: "client"
   });
 
   const [errors, setErrors] = useState({});
@@ -22,22 +22,44 @@ function SignUpClientForm() {
     setFormData({
       ...formData,
       [name]: value,
-    })
+    });
   }
 
-  function validateEmail (email){
+  function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   }
 
+  function validatePassword(password) {
+    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return re.test(password);
+  }
+
+  
+
   const handleBlur = (e) => {
     const { name, value } = e.target;
+
     if (name === 'email' && !validateEmail(value)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         email: 'Please enter a valid email address',
       }));
-    } else {
+    } else if (name === 'password' && !validatePassword(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: 'passowrd should include numbers , letters , uppercase and lowercase alphabets',
+      }));
+    } else if (name === 'confirmPassword' && value !== formData.password) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        confirmPassword: 'Passwords do not match',
+      }));
+      setFormData((prevData) => ({
+        ...prevData,
+        confirmPassword: '',
+      }));
+    }  else {
       setErrors((prevErrors) => ({
         ...prevErrors,
         [name]: '',
@@ -45,12 +67,12 @@ function SignUpClientForm() {
     }
   };
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
-    const { name,  contactNumber, email, password, confirmPassword } = formData;
+    const { name,  email, password, confirmPassword } = formData;
 
     // Basic validation
-    if (!name || ! contactNumber || !email || !password || !confirmPassword) {
+    if (!name || !email || !password || !confirmPassword) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         form: 'All fields are required',
@@ -64,19 +86,29 @@ function SignUpClientForm() {
       }));
       return;
     }
+    if (!validatePassword(password)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: 'passowrd should include numbers , letters , uppercase and lowercase alphabets',
+      }));
+      return;
+    }
+    
     if (password !== confirmPassword) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         confirmPassword: 'Passwords do not match',
-      }
-    ));
+      }));
+      setFormData((prevData) => ({
+        ...prevData,
+        confirmPassword: '',
+      }));
       return;
-    }else{
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            confirmPassword: '',
-          }
-        ));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        confirmPassword: '',
+      }));
     }
 
     // Sending POST request to the server
@@ -88,64 +120,38 @@ function SignUpClientForm() {
         },
         body: JSON.stringify(formData)
       });
-        
 
       if (response.ok) {
         setErrors((prevErrors) => ({
           ...prevErrors,
           form: '',
         }));
-        setSuccess("..logging in..")
-        console.log("success")
-        console.log(formData)
-        console.log(response)
+        setSuccess("Sign Up Successful...");
+        console.log("success");
+        console.log(formData);
+        console.log(response);
 
         setTimeout(() => {
-          
           navigate('/signIn');
         }, 3000);
 
-          
-      }else{
-        console.log("conflict")
-        setSuccess("")
-      
-        
-      setTimeout(() => {
+      } else {
+        console.log("conflict");
+        setSuccess("");
+
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'User Already Exist',
+          form: 'User with email Already Exist',
         }));
+
         setTimeout(() => {
           setErrors((prevErrors) => ({
             ...prevErrors,
             form: '',
           }));
         }, 5000);
-        
-      },500);
       }
 
-      // const data = await response.json();
-
-      // if (data.token) {
-      //   setErrors((prevErrors) => ({
-      //     ...prevErrors,
-      //     form: 'logging in',
-      //   }));
-      //   console.log("conflict")
-      
-      //   // Storing JWT in local storage
-
-      //   localStorage.setItem('jwt', data.token);
-      //   console.log(data.token)
-      //   // Redirect to the dashboard
-      //   // navigate('/');
-      // } else {
-       
-      //   console.log("conflict")
-      
-      // }
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -158,46 +164,40 @@ function SignUpClientForm() {
           form: '',
         }));
       }, 5000);
-      
     }
   }
-// toggle States
+
+  // toggle States
   const [toggle1, setToggle1] = useState(false)
   const [toggle2, setToggle2] = useState(false)
 
-  function passwordToggle1(){
-    setToggle1(preVState=>!preVState)
-    
+  function passwordToggle1() {
+    setToggle1(prevState => !prevState)
   }
-  function passwordToggle2(){
-    setToggle2(preVState=>!preVState)
+
+  function passwordToggle2() {
+    setToggle2(prevState => !prevState)
   }
-   
 
-    // JSX RETURN
-
+  // JSX RETURN
   return (
     <form onSubmit={handleSubmit} className="signUpForm">
-
-      {errors.form && <p style={{ color: 'red' ,fontSize: "1rem" }}>{errors.form}</p>}
-      {success && <p style={{ color: 'green' ,fontSize: "1.5rem", textAlign:"center" }}>{success}</p>}
+      {errors.form && <p style={{ color: 'red', fontSize: "1rem" }}>{errors.form}</p>}
+      {success && <p style={{ color: 'green', fontSize: "1.5rem", textAlign: "center" }}>{success}</p>}
       {/* hidden input role */}
-      <input 
-      type="hidden"
-       name="role"
-       value={formData.role} 
-      
-       />
-      {/* hidden input role */}
+      <input
+        type="hidden"
+        name="role"
+        value={formData.role}
+      />
       <label>Name</label>
       <input
         type="text"
         name="name"
         value={formData.name}
         onChange={handleChange}
-        
       />
-      {errors.name && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.name}</p>}
+      {errors.name && <p style={{ color: 'red', fontSize: "1rem" }}>{errors.name}</p>}
 
       <label>Phone number</label>
       <input
@@ -205,9 +205,10 @@ function SignUpClientForm() {
         name="contactNumber"
         value={formData.contactNumber}
         onChange={handleChange}
-    
+        onBlur={handleBlur}
       />
-      {errors.phoneNumber && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.phoneNumber}</p>}
+  
+  
 
       <label>Email</label>
       <input
@@ -216,45 +217,44 @@ function SignUpClientForm() {
         value={formData.email}
         onChange={handleChange}
         onBlur={handleBlur}
-        
       />
-      {errors.email && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.email}</p>}
-      {/* passwords */}
-    <div className='passwordOne'>
-      <label>Password</label>
-      <input
-        type={toggle1? "text" : "password"}
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        
-      />
-      {/* Toogle 1 */}
-       <span className="toggle" style={{display: "block"} } onClick={passwordToggle1}>
-        <img src={eyeToggle} alt="" />
-       </span>
-     </div>
+      {errors.email && <p style={{ color: 'red', fontSize: "1rem" }}>{errors.email}</p>}
 
-      {errors.password && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.password}</p>}
-   <div  className='passwordOne' >
-      <label>Confirm Password</label>
-      <input
-        type={toggle2? "text" : "password"}
-        name="confirmPassword"
-        value={formData.confirmPassword}
-        onChange={handleChange}
-        
-      />
-      {/* Toggle 2 */}
-      <span className='toggle' style={{display: "block"}} onClick={passwordToggle2}>
-        <img src={eyeToggle} alt="" />
-      </span>
-   </div>
-      {errors.confirmPassword && <p style={{  color: 'red' ,fontSize: "1rem"}}>{errors.confirmPassword}</p>}
+      <div className='passwordOne'>
+        <label>Password</label>
+        <input
+          type={toggle1 ? "text" : "password"}
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {/* Toggle 1 */}
+        <span className="toggle" style={{ display: "block" }} onClick={passwordToggle1}>
+          <img src={eyeToggle} alt="" />
+        </span>
+      </div>
+      {errors.password && <p style={{ color: 'red', fontSize: "1rem" }}>{errors.password}</p>}
+
+      <div className='passwordOne'>
+        <label>Confirm Password</label>
+        <input
+          type={toggle2 ? "text" : "password"}
+          name="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {/* Toggle 2 */}
+        <span className='toggle' style={{ display: "block" }} onClick={passwordToggle2}>
+          <img src={eyeToggle} alt="" />
+        </span>
+      </div>
+      {errors.confirmPassword && <p style={{ color: 'red', fontSize: "1rem" }}>{errors.confirmPassword}</p>}
 
       <button className="sign-up-button" type="submit">Sign Up</button>
     </form>
   );
 }
 
-export default SignUpClientForm;
+export default SignUpLenderForm;
