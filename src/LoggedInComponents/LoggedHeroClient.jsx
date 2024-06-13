@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
-import NavBar from "./NavBar"
+
+import LoggedInNavBarClient from "./LoggedInNavBarClient"
 // import bgHero from "../assets/heroBG.jpg"
 
-export default function Hero(){
+export default function LoggedHeroClient(){
 
      let heroSectionStyles ={
       background: `url("./heroBG.jpg")`,
@@ -14,7 +14,7 @@ export default function Hero(){
 
     return(
         <div className="heroSection" style={heroSectionStyles}>
-        <NavBar />
+        <LoggedInNavBarClient />
         {/* Hero---Main */}
         <div className="heroMain" >
          <h1>
@@ -29,14 +29,7 @@ export default function Hero(){
           <span className="block">farmer or just starting , ensuring that every crop thrives</span>
           </p>
           {/*  */}
-          <Link to="/welcomePage">
-          <div className="getStarted">
-            <h3 >Get Started Now</h3>
-            <figure>
-              <img src="GetStartedArrow.svg" alt="" />
-            </figure>
-          </div>
-          </Link>
+        
        
         </div>
       </div>

@@ -1,9 +1,11 @@
-import NavBar from "../components/NavBar"
+
+import LoggedInNavBarLender from "../LoggedInComponents/LoggedInNavBarLender"
 import Footer from "../components/Footer"
 import "../cssStyles/faq.css"
 
 
-export default function Faq(){
+export default function VendorLoggedInFaq(){
+
     const faqHero={
         backgroundImage: `linear-gradient(
             rgba(255, 255, 255, 0.5),
@@ -11,10 +13,11 @@ export default function Faq(){
           ),
           url("enomAbFaqBG.jpg")`
     }
+    
     return(
        <>
           <div className="faqHero" style={faqHero} >
-          <NavBar />
+          <LoggedInNavBarLender />
           <div className="faqContainer">
           <h1 className="help-header-text">How Can We Help You?</h1>
          <div className="columns">

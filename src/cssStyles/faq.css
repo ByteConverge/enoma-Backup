@@ -2,11 +2,6 @@
 
 .faqHero {
     min-height: 100vh;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ),
-      url("enomAbFaqBG.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -69,5 +64,73 @@
     /* margin-bottom: 20px; */
     width: 50%;
     font-size: 1.3rem;
+  }
+
+  @media screen and (max-width:768px) {
+    .faqHero {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20vh;
+    }
+    
+    .faqContainer {
+      min-height: 120vh;
+      padding: 20px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 15%;
+    
+    }
+    
+    .columns {
+        
+        display: grid;
+        grid-template-columns: 100%;
+        text-align:center ;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0rem;
+      
+    }
+    
+    /* Header Style */
+    .h--visit--text {
+        font-weight: 500;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+    
+    .help-header-text {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    
+    /* Question and Answer Styles */
+    .qna {
+      margin-bottom:1rem;
+      width: 100%;
+      font-size: 1.4rem;
+    }
+    
+    .qna p {
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.2rem;
+    }
+    
+   
+    .contact-info {
+      font-style: italic;
+      /* margin-top: 20px; */
+      /* margin-bottom: 20px; */
+      width: 100%;
+      font-size: 1rem;
+    }
+  
   }
   

@@ -10,7 +10,7 @@ export default function DataIcon({img ,number,text}){
       </figure>
       <h2>{number}</h2>
     </div>
-    <h2>{text}</h2>
+    <h2 className="data--icon--text">{text}</h2>
    </div>
   )
 }

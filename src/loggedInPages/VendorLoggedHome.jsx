@@ -6,16 +6,16 @@ import Cards from "../components/Cards"
 import DataIcon from "../components/DataIcon"
 import HappyCard from "../components/HappyCard"
 import Footer from "../components/Footer"
-import Hero from "../components/Hero"
+import LoggedHeroLender from "../LoggedInComponents/LoggedHeroLender"
 
-export default function Homepage(){
+export default function VendorLoggedHome(){
      const getInTouchBg ={
       background: `url("getInTouchBg.jpg")`
      }
 
     return (
       <>
-     <Hero />
+     <LoggedHeroLender />
       <div className="cards--Section">
       <Cards 
       img="tractorIcon.svg" 

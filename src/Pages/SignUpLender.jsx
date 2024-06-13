@@ -1,12 +1,22 @@
+import SignUpLenderForm from "../components/SignUpLenderForm"
 import "../cssStyles/signUpLender.css"
 import {Link} from "react-router-dom"
 
 
 export default function SignUpLender(){
+  const signUpBgstyle ={
+    background:`linear-gradient(rgba(245, 245, 245, 0),rgba(0, 0, 0, 0.486)), url("signinBg.jpg")`,
+    backgroundSize: `100% 100%`,
+    backgroundRepeat: `no-repeat`,
+    backgroundAttachment: `fixed`,
+    position: `relative`
+   }
+
+
     return(
         <div className="signUp--container">
 
-       <div className="signUpBg">
+       <div  style={signUpBgstyle}>
          <h1 className="enoma--header">E-Noma</h1>
        </div>
        {/* ...... */}
@@ -15,28 +25,7 @@ export default function SignUpLender(){
        <div className="signUp---fields">
          <h1 className="signUp--header">Sign Up</h1>
          {/* ---Form */}
-         <form action="" className="signUpForm">
-        
-        <label htmlFor="">Name</label>
-        <input type="text" placeholder=""/>
-        <label htmlFor="">Phone number</label>
-        <input type="number" placeholder=""/>
-        <label htmlFor="">Password</label>
-        <input type="text" placeholder=""/>
-        <label htmlFor="">Confirm Password</label>
-        <input type="text" placeholder=""/>
-      
-        <select className="selectOption" name="" id="">
-            <option value="">Select Lease Property</option>
-            <option value="">Land</option>
-            <option value="">Farm Euipments</option>
-            <option value="">Both</option>
-        </select>
-
-      
-        <button className="sign-in-button">Sign Up</button>
-
-        </form>
+        <SignUpLenderForm />
 
 
       {/* Google facebook buttons */}

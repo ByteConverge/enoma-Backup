@@ -1,12 +1,22 @@
+import SignUpClientForm from "../components/SignUpClientForm"
 import "../cssStyles/signUpLender.css"
 import {Link} from "react-router-dom"
 
 
 export default function SignUpClient(){
-    return(
-        <div className="signUp--container">
+     const signUpBgstyle ={
+      background:`linear-gradient(rgba(245, 245, 245, 0),rgba(0, 0, 0, 0.486)), url("signinBg.jpg")`,
+      backgroundSize: `100% 100%`,
+      backgroundRepeat: `no-repeat`,
+      backgroundAttachment: `fixed`,
+      position: `relative`
+     }
 
-       <div className="signUpBg">
+
+    return(
+        <div className="signUp--container"  >
+
+       <div style={signUpBgstyle}>
          <h1 className="enoma--header">E-Noma</h1>
        </div>
        {/* ...... */}
@@ -15,23 +25,7 @@ export default function SignUpClient(){
        <div className="signUp---fields">
          <h1 className="signUp--header">Sign Up</h1>
          {/* ---Form */}
-         <form action="" className="signUpForm">
-        
-        <label htmlFor="">Name</label>
-        <input type="text" placeholder=""/>
-        <label htmlFor="">Phone number</label>
-        <input type="number" placeholder=""/>
-        <label htmlFor="">Password</label>
-        <input type="text" placeholder=""/>
-        <label htmlFor="">Confirm Password</label>
-        <input type="text" placeholder=""/>
-      
-       
-
-      
-        <button className="sign-in-button">Sign Up</button>
-
-        </form>
+        <SignUpClientForm />
 
 
       {/* Google facebook buttons */}

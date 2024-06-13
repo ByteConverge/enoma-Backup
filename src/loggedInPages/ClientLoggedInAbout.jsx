@@ -1,9 +1,9 @@
 import "../cssStyles/AboutPage.css"
 import {Link} from "react-router-dom"
-import NavBar from "../components/NavBar"
+import LoggedInNavBarClient from "../LoggedInComponents/LoggedInNavBarClient"
 import Footer from "../components/Footer"
 
-export default function AboutPage(){
+export default function ClientLoggedInAbout(){
    const aboutHeroBg = {
     background: `linear-gradient(
       rgba(255, 255, 255, 0.5),
@@ -15,7 +15,7 @@ export default function AboutPage(){
     return(
         <>
           <div className="AboutHero" style={aboutHeroBg}>
-          <NavBar />
+          <LoggedInNavBarClient />
           {/*  About passages  */}
         <div className="About--container">
         <div className="aboutUs--wrap space">    

@@ -1,7 +1,7 @@
-import {Link ,NavLink} from "react-router-dom"
+import {NavLink ,Link} from "react-router-dom"
 import { useState } from "react"
 
-export default function NavBar(){
+export default function LoggedInNavBarLender(){
  const [hambugMenu , setHambugMenu] = useState(false)
 
   function handleClick(){
@@ -33,16 +33,16 @@ export default function NavBar(){
         {/*  .navBar--links // navBar--links-display--none  */}
         <div className={`navBar--links ${!hambugMenu && "navBar--links-display--none"}`} >
             <div className="HAF--links">
-              <NavLink to="/" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>Home</NavLink>
-              <NavLink to="/about" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>About us</NavLink>
-              <NavLink to="/faq" >FAQ</NavLink>
+              <NavLink to="/vendorLoggedInHome" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>Home</NavLink>
+              <NavLink to="/vendorLoggedInAbout" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>About us</NavLink>
+              <NavLink to="/vendorLoggedInFaq" >FAQ</NavLink>
             </div>
-            {/*  */}
-            <div className="links--login--signup">
-                <Link to="/signIn">Sign in</Link>
-                <Link to="/WelcomePage">Sign up</Link>
-            </div>
-        </div>
+
+             <Link>
+             DashBoard
+             </Link>
+                
+             </div>
         <span className="hamburger" onClick={handleClick}>&#9776;</span>
     </nav> 
     )

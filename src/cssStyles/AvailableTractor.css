@@ -1,8 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    /* outline: 1px solid red; */
-    }
+
     
     .tractorBackground {
       width: 100%;
@@ -68,10 +64,7 @@
   place-items: center;
   margin: 15px 470px;
 }
-.topPage {
-  padding: 20px;
-  font-weight: bold;
-}
+
 .flex {
   list-style: none;
   display: flex;

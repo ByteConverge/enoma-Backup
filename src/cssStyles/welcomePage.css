@@ -82,6 +82,96 @@
     font-style: normal;
 }
 
+@media screen and (max-width: 768px) {
+    .welcomeContainer {
+        width: 100%;
+        min-height: 100dvh;
+        background-color: #ffffff;
+        display: grid;
+        place-items: center;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    .welcome--image--wrap {
+     width: 100%;
+     height: 100dvh;
+     display: grid;
+     grid-template-rows: 100%;
+     grid-template-columns: 100%;  
+     justify-content: space-between; 
+    
+    }
+    
+    .side--img  img{
+       display: none;
+    }
+    
+    .welcome--text--div {
+        background: radial-gradient(white, rgb(209, 236, 209));
+        display: flex;
+        background-image: url("../assets/welcomeToEnoma.jpg");
+        background-position: center;
+        
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .welcome--text--div div:nth-child(1) , .welcome--text--div div:nth-child(2){
+        height: 50%;
+        width: 100%;
+    }
+    
+    .welcome--text--div div:nth-child(1) {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .welcome--text--div div:nth-child(1) h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        height: 20px;
+        color: white;
+        text-shadow: 0 0 10px black;
+    
+    }
+    
+    .welcome--text--div div:nth-child(1) p {
+        font-size: 1rem;
+        color: #ffffff;  
+         text-align: center;
+         margin-top: 2rem;
+        text-shadow: 0 0  10px black;
+    }
+    
+    .welcome--text--div div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.9rem;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+    
+    .welcome--text--div div:nth-child(2) a {
+        width: 100%;
+        height: 56px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 40px;
+        display: grid;
+        place-items: center;
+        font-size: 30px;
+        color: white;
+        font-family: "Abel", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+
+
 
 
 
