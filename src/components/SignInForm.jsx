@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import eyeToggle from "../assets/eye-slash.png"
+import eyeToggle from "../assets/eye-slash.svg"
 
 function SignInForm() {
   const [formData, setFormData] = useState({
