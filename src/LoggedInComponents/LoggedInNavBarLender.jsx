@@ -33,9 +33,9 @@ export default function LoggedInNavBarLender(){
         {/*  .navBar--links // navBar--links-display--none  */}
         <div className={`navBar--links ${!hambugMenu && "navBar--links-display--none"}`} >
             <div className="HAF--links">
-              <NavLink to="/vendorLoggedInHome" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>Home</NavLink>
-              <NavLink to="/vendorLoggedInAbout" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>About us</NavLink>
-              <NavLink to="/vendorLoggedInFaq" >FAQ</NavLink>
+              <NavLink to="/lenderLoggedInHome" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>Home</NavLink>
+              <NavLink to="/lenderLoggedInAbout" Style={({isActive})=> isActive? activeStyles : null} onClick={removeHandle}>About us</NavLink>
+              <NavLink to="/lenderLoggedInFaq" >FAQ</NavLink>
             </div>
 
              <Link>

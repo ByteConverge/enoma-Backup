@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+
 import Tractor from "../components/Tractor";
 import tracImage from "../assets/tractor blue.png.png";
 import tracImage1 from "../assets/tractor red.png.png";
