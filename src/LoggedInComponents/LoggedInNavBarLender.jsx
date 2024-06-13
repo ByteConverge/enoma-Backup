@@ -38,7 +38,7 @@ export default function LoggedInNavBarLender(){
               <NavLink to="/lenderLoggedInFaq" >FAQ</NavLink>
             </div>
 
-             <Link>
+             <Link to="/dashboard">
              DashBoard
              </Link>
                 

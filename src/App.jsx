@@ -16,6 +16,11 @@ import ClientLoggedInFaq from "./loggedInPages/ClientLoggedInFaq"
 import VendorLoggedHome from "./loggedInPages/VendorLoggedHome"
 import VendorLoggedInAbout from "./loggedInPages/vendorLoggedAbout"
 import VendorLoggedInFaq from "./loggedInPages/VendorLoggedFaq"
+import DashBoardLayout  from "./loggedInPages/DashBoardLayout";
+import DashBoardHome from "./loggedInPages/DashBoardHome";
+import DashBoardDetails from "./loggedInPages/DashBoardDetails";
+import DashBoardNotification from "./loggedInPages/DashBoardNotification";
+import DashBoardSecurity from "./loggedInPages/DashBoardSecurity";
 
 
 
@@ -40,6 +45,14 @@ function App() {
       <Route   path="lenderLoggedInAbout" element={<VendorLoggedInAbout />}/>
       <Route   path="lenderLoggedInFaq" element={<VendorLoggedInFaq />}/>
      <Route path="/availableTractor" element={<AvailableTractors />} />
+
+     <Route path="/dashboard" element={<DashBoardLayout />} >
+     <Route  index  element={<DashBoardHome />}/>
+     <Route  path="dashBoardDetails"  element={<DashBoardDetails/>}/>
+     <Route  path="dashBoardNotification"  element={<DashBoardNotification />}/>
+     <Route  path="dashBoardSecurity"  element={<DashBoardSecurity />}/>
+     </Route>
+
     </Routes>
     </BrowserRouter>
   );
