@@ -80,8 +80,14 @@ function SignInForm() {
          setSuccess("")
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'Invalid Credentials',
+          form: 'Invalid Credentials: Check email or password',
         }))
+        setTimeout(() => {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          form: '',
+        }))
+        }, 5000);
       }
 
       const data = await response.json();

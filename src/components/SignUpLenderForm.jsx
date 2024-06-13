@@ -109,10 +109,21 @@ function SignUpClientForm() {
       }else{
         console.log("conflict")
         setSuccess("")
+      
+        
+      setTimeout(() => {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          form: 'User with email Already Exist',
+          form: 'User Already Exist',
         }));
+        setTimeout(() => {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            form: '',
+          }));
+        }, 5000);
+        
+      },500);
       }
 
       // const data = await response.json();
@@ -138,8 +149,15 @@ function SignUpClientForm() {
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        form: 'Failed to sign up',
+        form: 'Error: Check data connection',
       }));
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          form: '',
+        }));
+      }, 5000);
       
     }
   }

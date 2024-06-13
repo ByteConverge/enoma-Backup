@@ -95,7 +95,7 @@ function SignUpClientForm() {
           ...prevErrors,
           form: '',
         }));
-        setSuccess("Sign Up Successfully")
+        setSuccess("Sign Up Successful...")
         console.log("success")
         console.log(formData)
         console.log(response)
@@ -109,10 +109,24 @@ function SignUpClientForm() {
       }else{
         console.log("conflict")
         setSuccess("")
+    
         setErrors((prevErrors) => ({
           ...prevErrors,
           form: 'User Already Exist',
         }));
+        
+        setTimeout(() => {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            form: '',
+          }));
+        }, 5000);
+        
+    
+
+      
+
+
       }
 
       // const data = await response.json();
@@ -138,8 +152,15 @@ function SignUpClientForm() {
     } catch (error) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        form: 'Failed to sign up',
+        form: 'Error: Check data connection',
       }));
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          form: '',
+        }));
+      }, 5000);
       
     }
   }
