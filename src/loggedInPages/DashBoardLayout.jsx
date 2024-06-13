@@ -13,7 +13,7 @@ export default function DashBoardLayout(){
     return(
         <div className="dashBoardContainer">
             <div className="dashBoardLayout">
-                <h1>userName</h1>
+                <h1>username</h1>
              <div className="layoutWrap"> 
            <NavLink to="/dashboard">
            <Layout img={homeIcon}  text="Home"/>
